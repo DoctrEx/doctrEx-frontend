@@ -1,0 +1,9 @@
+.label {
+  @apply block;
+}
+
+/* Overriding button's font family and other properties */
+.MuiButtonBase-root.MuiButton-root{
+  font-family: 'Poppins', sans-serif;
+  text-transform: capitalize;
+}

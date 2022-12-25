@@ -1,0 +1,24 @@
+/* NOTE: The order of imports here are important dont change them */
+
+/* loading tailwind base css  */
+/* @tailwind base;  */
+
+/* Custom component */
+@tailwind components;
+
+/* overrides and globals should be after themes. */
+@import "./globals.css";
+@import "./overrides.css";
+
+/* utils and helpers should be after everything */
+@tailwind utilities;
+
+/* Styles for font-awesome icons  */
+[class*="fa-"] {
+  aspect-ratio: 1/1;
+  font-size: 1.1rem;
+  width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
