@@ -134,6 +134,22 @@ const LIGHT = {
         },
       },
     },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#FFFFFF",
+          color: "#0061FF"
+        },
+      },
+    },
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          display: "flex",
+          justifyContent: "space-between"
+        }
+      }
+    }
   },
   breakpoints: {
     values: {
@@ -177,6 +193,16 @@ const DARK = deepmerge(
         paper: themeColor.black,
       },
     },
+    components: {
+      MuiAppBar: {
+        styleOverrides: {
+          root: {
+            backgroundColor: "#000",
+            color: "#FFF"
+          },
+        },
+      },
+    }
   }
 )
 
