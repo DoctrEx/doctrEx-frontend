@@ -24,7 +24,7 @@ const LIGHT = {
       white: themeColor.white,
     },
     background: {
-      default: themeColor.neutral[100],
+      default: themeColor.white,
       paper: themeColor.white,
     },
   },
@@ -139,6 +139,7 @@ const LIGHT = {
           backgroundColor: "#FFFFFF",
           color: "#0061FF",
           boxShadow: "0 .5rem 1rem rgba(0,0,0,.15)",
+          marginBottom: "3rem"
         },
       },
     },

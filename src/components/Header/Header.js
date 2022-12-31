@@ -13,7 +13,7 @@ import Tooltip from "@mui/material/Tooltip"
 import MenuItem from "@mui/material/MenuItem"
 import AdbIcon from "@mui/icons-material/Adb"
 import { Link } from "react-router-dom"
-import { URL_LOGIN, URL_HOME, URL_SIGNUP } from "../router/routes"
+import { URL_LOGIN, URL_HOME, URL_SIGNUP } from "../../router/routes"
 
 const pages = ["home", "services", "about"]
 // const pages = [
@@ -23,7 +23,7 @@ const pages = ["home", "services", "about"]
 // ]
 const settings = ["Profile", "Account", "Dashboard", "Logout"]
 
-function Header() {
+export function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
 
@@ -114,7 +114,7 @@ function Header() {
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  className="mx-3"
+                  className="mx-3 text-[1.01rem]"
                   variant="text"
                   color="secondary"
                 >
@@ -141,4 +141,3 @@ function Header() {
     </AppBar>
   )
 }
-export default Header

@@ -1,13 +1,12 @@
 /* importing fonts  */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 /* Some global styles  */
-*{
-  font-family: 'Poppins', sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
 }
-
 
 img,
 svg,
@@ -37,7 +36,6 @@ table {
   @apply mx-auto max-w-screen-2xl;
 }
 
-
 h1,
 h2,
 h3,
@@ -56,8 +54,18 @@ a {
   /* @apply hover:border-transparent hover:shadow-md;  */
 }
 
-.link{
+.link {
   text-decoration: none;
   color: inherit;
   text-transform: capitalize;
+}
+
+.img-container {
+  display: flex;
+  justify-content: end;
+}
+
+h1{
+  font-size: 3rem;
+  line-height: normal;
 }
