@@ -6,7 +6,7 @@ import { LIGHTTHEME, DARKTHEME } from './styles/MuiTheme'
 
 function App() {
   return (
-    <ThemeProvider theme={DARKTHEME}>
+    <ThemeProvider theme={LIGHTTHEME}>
       <CssBaseline />
       <RouterProvider router={Router} />
     </ThemeProvider>

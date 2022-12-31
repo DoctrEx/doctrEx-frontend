@@ -12,8 +12,15 @@ import Button from "@mui/material/Button"
 import Tooltip from "@mui/material/Tooltip"
 import MenuItem from "@mui/material/MenuItem"
 import AdbIcon from "@mui/icons-material/Adb"
+import { Link } from "react-router-dom"
+import { URL_LOGIN, URL_HOME, URL_SIGNUP } from "../router/routes"
 
-const pages = ["Products", "Pricing", "Blog"]
+const pages = ["home", "services", "about"]
+// const pages = [
+//   { title: "home", link: URL_HOME },
+//   { title: "services", link: `${URL_HOME}#services` },
+//   { title: "about", link: `${URL_HOME}#about` },
+// ]
 const settings = ["Profile", "Account", "Dashboard", "Logout"]
 
 function Header() {
@@ -40,7 +47,9 @@ function Header() {
       <Container maxWidth="lg">
         <Toolbar disableGutters variant="dense">
           {/* Logo on large screens  */}
-          <h2 className="hidden md:flex">DoctrEx</h2>
+          <Link className="link" to={`${URL_HOME}`}>
+            <h2 className="hidden md:flex">DoctrEx</h2>
+          </Link>
 
           {/* Hamburger Menu For Small Screens */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -72,39 +81,60 @@ function Header() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page, index) => (
+                <MenuItem key={`${page}-${index}`} onClick={handleCloseNavMenu}>
+                  <Link className="link" to={`${URL_HOME}#${page}`}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
-              <Button variant="text" className="mx-2">
-                Login
-              </Button> <br />
-              <Button variant="text" className="mx-2">
-                Signup
-              </Button>
+              <Link to={`${URL_LOGIN}`} className="link w-full">
+                <Button size="small" className="ml-3 text-[1rem] pr-[100%] py-3">
+                  login
+                </Button>{" "}
+              </Link>
+              <br />
+              <Link to={`${URL_SIGNUP}`} className="link w-full">
+                <Button size="small" className="ml-3 text-[1rem] pr-[100%] py-3">
+                  signup
+                </Button>
+              </Link>
             </Menu>
           </Box>
 
           {/* Logo on small screens  */}
-          <h2 className="flex md:hidden flex-grow">DoctrEx</h2>
+          <Link className="link flex md:hidden flex-grow" to={`${URL_HOME}`}>
+            <h2>DoctrEx</h2>
+          </Link>
 
           {/* Buttons on large devices */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: "center" }}>
             {pages.map((page) => (
-              <Button key={page} onClick={handleCloseNavMenu} className="mx-3" variant="text">
-                {page}
-              </Button>
+              <Link className="link" to={`${URL_HOME}#${page}`}>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  className="mx-3"
+                  variant="text"
+                  color="secondary"
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
 
           <Box className="flex-grow-0 hidden md:flex">
-            <Button variant="contained" className="mx-2">
-              Login
-            </Button>
-            <Button variant="contained" className="mx-2">
-              Signup
-            </Button>
+            <Link to={`${URL_LOGIN}`} className="link">
+              <Button variant="contained" className="mx-2">
+                login
+              </Button>
+            </Link>
+            <Link to={`${URL_SIGNUP}`} className="link">
+              <Button variant="contained" className="mx-2">
+                signup
+              </Button>
+            </Link>
           </Box>
         </Toolbar>
       </Container>
