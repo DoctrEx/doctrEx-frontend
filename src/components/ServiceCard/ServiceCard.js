@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Grid } from "@mui/material"
+import { Grid } from "@mui/material"
 
 export const ServiceCard = ({ icon, title, description }) => {
   return (
@@ -12,7 +12,7 @@ export const ServiceCard = ({ icon, title, description }) => {
     >
       <img src={icon} alt="service-icon" className="w-12" />
       <h3 className="mt-5">{title}</h3>
-      <p className="mt-3 text-center">{description}</p>
+      <p className="mt-3 text-center text-gray-500 dark:text-white">{description}</p>
     </Grid>
   )
 }

@@ -20,3 +20,42 @@ export const SERVICES = [
     description: "Get specialized treatments of varying durations from our experts.",
   },
 ]
+
+export const DOCTORS = [
+  {
+    picture: "",
+    name: "Lee S.Willimson",
+    specialization: "Cardiology",
+    rating: "5.0",
+    noOfReviews: "499",
+    noOfPatients: "+2000",
+    location: "1300 N Vermont Ave 610, Los Angeles",
+  },
+  {
+    picture: "",
+    name: "Dr. Daniyal Alex",
+    specialization: "Neurology",
+    rating: "4.9",
+    noOfReviews: "350",
+    noOfPatients: "+4000",
+    location: "1800 F Bounty Eve 810, Las Vegas",
+  },
+  {
+    picture: "",
+    name: "Roger K. Jackson",
+    specialization: "Orthopedics",
+    rating: "5.0",
+    noOfReviews: "1k+",
+    noOfPatients: "+9000",
+    location: "1200 F Cristy Eve 910, New York",
+  },
+  {
+    picture: "",
+    name: "Raymudo M.Drake",
+    specialization: "Covid-19",
+    rating: "4.9",
+    noOfReviews: "2k+",
+    noOfPatients: "+8000",
+    location: "1900 F Cristy Eve 810, New York",
+  },
+]

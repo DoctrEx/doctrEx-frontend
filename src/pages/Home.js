@@ -4,6 +4,8 @@ import { Footer } from "../components/Footer"
 import { HeroSection } from "../components/HeroSection"
 import { Button, Grid, Container } from "@mui/material"
 import { Services } from "../components/Services/"
+import { About } from "../components/About"
+import { DoctorContainer } from "../components/DoctorContainer/"
 
 const Home = () => {
   return (
@@ -12,6 +14,8 @@ const Home = () => {
       <main>
         <HeroSection />
         <Services />
+        <About />
+        <DoctorContainer />
       </main>
     </div>
   )

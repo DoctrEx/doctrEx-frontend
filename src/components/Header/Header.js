@@ -110,7 +110,7 @@ export function Header() {
           {/* Buttons on large devices */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: "center" }}>
             {pages.map((page) => (
-              <Link className="link" to={`${URL_HOME}#${page}`}>
+              <Link className="link" to={`#${page}`}>
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
