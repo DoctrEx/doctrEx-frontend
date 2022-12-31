@@ -126,12 +126,12 @@ export function Header() {
 
           <Box className="flex-grow-0 hidden md:flex">
             <Link to={`${URL_LOGIN}`} className="link">
-              <Button variant="contained" className="mx-2">
+              <Button variant="contained" className="mx-2 rounded-lg">
                 login
               </Button>
             </Link>
             <Link to={`${URL_SIGNUP}`} className="link">
-              <Button variant="contained" className="mx-2">
+              <Button variant="contained" className="mx-2 rounded-lg">
                 signup
               </Button>
             </Link>

@@ -139,7 +139,7 @@ const LIGHT = {
           backgroundColor: "#FFFFFF",
           color: "#0061FF",
           boxShadow: "0 .5rem 1rem rgba(0,0,0,.15)",
-          marginBottom: "3rem"
+          marginBottom: "3rem",
         },
       },
     },
@@ -159,7 +159,7 @@ const LIGHT = {
       styleOverrides: {
         root: {
           width: "100%",
-          boxShadow: "0 .5rem 1rem rgba(0,0,0,.15)"
+          boxShadow: "0 .5rem 1rem rgba(0,0,0,.15)",
         },
       },
     },

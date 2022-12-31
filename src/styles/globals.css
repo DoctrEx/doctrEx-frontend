@@ -51,7 +51,7 @@ a {
 
 .hoverable {
   transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out !important;
-  /* @apply hover:border-transparent hover:shadow-md;  */
+  @apply hover:border-transparent hover:shadow-md hover:cursor-pointer;
 }
 
 .link {
@@ -65,7 +65,7 @@ a {
   justify-content: end;
 }
 
-h1{
+h1 {
   font-size: 3rem;
   line-height: normal;
 }

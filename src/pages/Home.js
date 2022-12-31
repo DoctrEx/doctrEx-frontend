@@ -3,6 +3,7 @@ import { Header } from "../components/Header/"
 import { Footer } from "../components/Footer"
 import { HeroSection } from "../components/HeroSection"
 import { Button, Grid, Container } from "@mui/material"
+import { Services } from "../components/Services/"
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Header />
       <main>
         <HeroSection />
+        <Services />
       </main>
     </div>
   )
