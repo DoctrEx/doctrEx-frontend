@@ -154,6 +154,14 @@ const LIGHT = {
         },
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          width: "100%",
+          boxShadow: "0 .5rem 1rem rgba(0,0,0,.15)"
+        },
+      },
+    },
   },
   breakpoints: {
     values: {
