@@ -1,3 +1,9 @@
 .label {
   @apply block;
 }
+
+/* Styles for overriding the width of the navbar  */
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  width: 100%;
+  box-shadow: 0 2px 23px 0 rgba(0, 0, 0, 0.2);
+}

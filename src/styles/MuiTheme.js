@@ -52,7 +52,6 @@ const LIGHT = {
           minWidth: "unset",
           textTransform: "inherit",
           boxShadow: "none",
-          ":hover": { boxShadow: "none", backgroundColor: "#0036C8" },
         },
       },
     },
@@ -138,7 +137,8 @@ const LIGHT = {
       styleOverrides: {
         root: {
           backgroundColor: "#FFFFFF",
-          color: "#0061FF"
+          color: "#0061FF",
+          boxShadow: "0 .5rem 1rem rgba(0,0,0,.15)",
         },
       },
     },
@@ -146,10 +146,14 @@ const LIGHT = {
       styleOverrides: {
         root: {
           display: "flex",
-          justifyContent: "space-between"
-        }
-      }
-    }
+          justifyContent: "space-between",
+        },
+        dense: {
+          height: 50,
+          minHeight: 50,
+        },
+      },
+    },
   },
   breakpoints: {
     values: {
@@ -198,11 +202,22 @@ const DARK = deepmerge(
         styleOverrides: {
           root: {
             backgroundColor: "#000",
-            color: "#FFF"
+            color: "#FFF",
           },
         },
       },
-    }
+      MuiButton: {
+        defaultProps: { disableElevation: true },
+        styleOverrides: {
+          root: {
+            minWidth: "unset",
+            textTransform: "inherit",
+            boxShadow: "none",
+            color: "#FFFFFF",
+          },
+        },
+      },
+    },
   }
 )
 
