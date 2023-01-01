@@ -73,3 +73,33 @@ export const DOCTORS = [
     location: "1900 F Cristy Eve 810, New York",
   },
 ]
+
+export const PATIENT_TESTIMONIALS = [
+  {
+    name: "Jessica Tailor",
+    avatar: "/assets/person3.jpg",
+    tagline: "It was an amazing experience!",
+    testimonial_1:
+      "Highly glad to avail the cordial services of DoctrEx. One of my patients enjoyed these services recently and he expresses deep gratitude to me for referring him to DoctrEx.",
+    testimonial_2:
+      "He also stated that he will strongly recommend the Anavara to the overseas treatment seekers. Medical Tourism & Air Amblance Service. Health & Wellness Global Facilitators.",
+  },
+  {
+    name: "Micheal Aaron",
+    avatar: "/assets/person2.jpg",
+    tagline: "A truly incredible experience!",
+    testimonial_1:
+      "I'm thrilled to use DoctrEx's friendly services. Recently, one of my patients took use of these services, and he recently thanked me profusely for introducing him to DoctrEx.",
+    testimonial_2:
+      "He said that he will heartily endorse Anavara to anyone seeking treatment abroad. Healthcare travel and Air Ambrose service. Facilitators for Global Health & Wellness.",
+  },
+  {
+    name: "Human Rarcal",
+    tagline: "A remarkable experience, undoubtedly!",
+    avatar: "/assets/person1.jpg",
+    testimonial_1:
+      "Really happy to use DoctrEx's friendly services. One of my patients recently expressed his heartfelt thanks to me for introducing him to DoctrEx after taking use of these services.",
+    testimonial_2:
+      "As part of his remarks, he added that he would heartily endorse Anavara for those seeking medical care abroad. Air Amblance service and medical tourism. Global Facilitators for Health & Wellness.",
+  },
+]

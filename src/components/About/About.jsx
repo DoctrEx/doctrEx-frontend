@@ -18,7 +18,7 @@ export const About = () => {
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <div className="flex justify-center py-2 px-10 md:py-0 md:px-0">
+            <div className="flex justify-start py-2 px-10 md:py-0 md:px-0">
               <AboutAppointmentContainer
                 topic="About Us"
                 mainHeading1="Quality health stars"

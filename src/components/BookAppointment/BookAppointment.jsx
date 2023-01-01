@@ -9,7 +9,7 @@ export const BookAppointment = () => {
       <div className="pt-32 md:pt-40">
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <div className="flex justify-center py-2 px-10 md:py-10 md:px-0">
+            <div className="flex justify-start py-2 px-10 md:py-6 md:px-0">
               <AboutAppointmentContainer
                 topic="Book Appointment"
                 mainHeading1="Book an appointment"

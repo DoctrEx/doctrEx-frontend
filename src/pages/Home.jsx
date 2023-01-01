@@ -7,6 +7,7 @@ import { Services } from "../components/Services"
 import { About } from "../components/About"
 import { DoctorContainer } from "../components/DoctorContainer"
 import { BookAppointment } from "../components/BookAppointment"
+import { Testimonial } from "../components/Testimonial"
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
         <About />
         <DoctorContainer />
         <BookAppointment />
+        <Testimonial />
       </main>
     </div>
   )
