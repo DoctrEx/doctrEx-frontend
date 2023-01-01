@@ -23,7 +23,7 @@ export const SERVICES = [
 
 export const DOCTORS = [
   {
-    picture: "",
+    picture: "/assets/doctor1.png",
     name: "Lee S.Willimson",
     specialization: "Cardiology",
     rating: "5.0",
@@ -32,7 +32,7 @@ export const DOCTORS = [
     location: "1300 N Vermont Ave 610, Los Angeles",
   },
   {
-    picture: "",
+    picture: "/assets/doctor2.png",
     name: "Dr. Daniyal Alex",
     specialization: "Neurology",
     rating: "4.9",
@@ -41,7 +41,7 @@ export const DOCTORS = [
     location: "1800 F Bounty Eve 810, Las Vegas",
   },
   {
-    picture: "",
+    picture: "/assets/doctor1.png",
     name: "Roger K. Jackson",
     specialization: "Orthopedics",
     rating: "5.0",
@@ -50,7 +50,7 @@ export const DOCTORS = [
     location: "1200 F Cristy Eve 910, New York",
   },
   {
-    picture: "",
+    picture: "/assets/doctor2.png",
     name: "Raymudo M.Drake",
     specialization: "Covid-19",
     rating: "4.9",
