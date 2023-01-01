@@ -17,7 +17,6 @@ const Home = () => {
         <About />
         <DoctorContainer />
       </main>
-      <Footer />
     </div>
   )
 }
