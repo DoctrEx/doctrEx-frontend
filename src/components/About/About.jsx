@@ -1,6 +1,6 @@
 import React from "react"
 import { Container, Grid, Button } from "@mui/material"
-import { AboutAppointmentContainer } from "../AboutAppointmentContainer/"
+import { AboutAppointmentContainer } from "../AboutAppointmentContainer"
 
 const CHECK_POINTS = [
   {
