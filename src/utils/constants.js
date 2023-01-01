@@ -21,6 +21,20 @@ export const SERVICES = [
   },
 ]
 
+export const ABOUT_CHECK_POINTS = [
+  {
+    description: "We practice medicine that are historical",
+  },
+  { description: "We have access to amazing treatments" },
+]
+
+export const APPOINTMENT_CHECK_POINTS = [
+  {
+    description: "We practice medicine that are historical",
+  },
+  { description: "We have access to amazing treatments" },
+]
+
 export const DOCTORS = [
   {
     picture: "/assets/doctor1.png",

@@ -6,6 +6,7 @@ import { Button, Grid, Container } from "@mui/material"
 import { Services } from "../components/Services"
 import { About } from "../components/About"
 import { DoctorContainer } from "../components/DoctorContainer"
+import { BookAppointment } from "../components/BookAppointment"
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <Services />
         <About />
         <DoctorContainer />
+        <BookAppointment />
       </main>
     </div>
   )

@@ -128,7 +128,7 @@ const LIGHT = {
         root: {},
         maxWidthLg: {
           "&.MuiContainer-maxWidthLg": {
-            maxWidth: 1300,
+            maxWidth: 1200,
           },
         },
       },
