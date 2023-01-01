@@ -42,7 +42,7 @@ export const Testimonial = () => {
             </Grid>
 
             <Grid item xs={12} md={7}>
-              <div className="flex justify-start p-8 md:p-8 md:pt-4">
+              <div className="flex justify-start p-8 md:p-8 md:pt-4 border border-solid border-gray-100 shadow-lg rounded-2xl">
                 <div>
                   <div className="mt-4 flex justify-between">
                     <p className="font-bold text-2xl">
