@@ -13,7 +13,9 @@ import { FAQ } from "../components/FAQ"
 const Home = () => {
   return (
     <div>
-      <Header />
+      <header>
+        <Header />
+      </header>
       <main>
         <HeroSection />
         <Services />
@@ -23,6 +25,9 @@ const Home = () => {
         <Testimonial />
         <FAQ />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   )
 }

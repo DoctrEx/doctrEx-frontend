@@ -49,9 +49,9 @@ export function CustomizedAccordions() {
           id="panel1d-header"
           expandIcon={
             expanded === "panel1" ? (
-              <RemoveCircleIcon className="text-3xl text-primary" />
+              <RemoveCircleIcon className="text-3xl text-primary dark:text-white" />
             ) : (
-              <AddCircleIcon className="text-3xl text-primary" />
+              <AddCircleIcon className="text-3xl text-primary dark:text-white" />
             )
           }
         >
@@ -71,9 +71,9 @@ export function CustomizedAccordions() {
           id="panel2d-header"
           expandIcon={
             expanded === "panel2" ? (
-              <RemoveCircleIcon className="text-3xl text-primary" />
+              <RemoveCircleIcon className="text-3xl text-primary dark:text-white" />
             ) : (
-              <AddCircleIcon className="text-3xl text-primary" />
+              <AddCircleIcon className="text-3xl text-primary dark:text-white" />
             )
           }
         >
@@ -94,9 +94,9 @@ export function CustomizedAccordions() {
           id="panel3d-header"
           expandIcon={
             expanded === "panel3" ? (
-              <RemoveCircleIcon className="text-3xl text-primary" />
+              <RemoveCircleIcon className="text-3xl text-primary dark:text-white" />
             ) : (
-              <AddCircleIcon className="text-3xl text-primary" />
+              <AddCircleIcon className="text-3xl text-primary dark:text-white" />
             )
           }
         >
@@ -119,9 +119,9 @@ export function CustomizedAccordions() {
           id="panel4d-header"
           expandIcon={
             expanded === "panel4" ? (
-              <RemoveCircleIcon className="text-3xl text-primary" />
+              <RemoveCircleIcon className="text-3xl text-primary dark:text-white" />
             ) : (
-              <AddCircleIcon className="text-3xl text-primary" />
+              <AddCircleIcon className="text-3xl text-primary dark:text-white" />
             )
           }
         >
