@@ -16,8 +16,8 @@ export const AboutAppointmentContainer = ({
       <h1 className="text-4xl md:text-5xl mt-5">
         {mainHeading1} <span className="inline md:block md:mt-4">{mainHeading2}</span>
       </h1>
-      <p className="mt-8 text-gray-500 dark:text-gray-300">{para1}</p>
-      <p className="mt-4 text-gray-500 dark:text-gray-300">{para2}</p>
+      <p className="mt-8 text-gray-600 dark:text-gray-300">{para1}</p>
+      <p className="mt-4 text-gray-600 dark:text-gray-300">{para2}</p>
       <div className="mt-10 mb-8">
         {checkPoints.map((item) => (
           <div className="flex items-center space-x-2 mt-4">

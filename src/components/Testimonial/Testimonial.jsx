@@ -58,12 +58,12 @@ export const Testimonial = () => {
                       ))}
                   </span>
                   <div className="mt-8">
-                    <p className="text-gray-500 dark:text-gray-300">
+                    <p className="text-gray-600 dark:text-gray-300">
                       {PATIENT_TESTIMONIALS[personIndex].testimonial_1}
                     </p>
                   </div>
                   <div className="mt-4">
-                    <p className="text-gray-500 dark:text-gray-300">
+                    <p className="text-gray-600 dark:text-gray-300">
                       {PATIENT_TESTIMONIALS[personIndex].testimonial_2}
                     </p>
                   </div>

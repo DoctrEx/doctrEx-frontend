@@ -13,7 +13,7 @@ export const HeroSection = () => {
             <h1 className="text-4xl md:text-7xl">
               Find <span className="text-primary">Best Clinic</span> <br /> To Get Solutions.
             </h1>
-            <p className="text-[1.1rem] md:text-xl mt-5 mb-8 text-gray-500 dark:text-gray-300">
+            <p className="text-[1.1rem] md:text-xl mt-5 mb-8 text-gray-600 dark:text-gray-300">
               Health is one of the most important things for us therefore immediately check your
               health for a good and wise you.
             </p>

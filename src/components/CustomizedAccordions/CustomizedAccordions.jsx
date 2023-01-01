@@ -58,7 +58,7 @@ export function CustomizedAccordions() {
           <Typography className="font-bold text-xl">What does telemedicine mean?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography className="text-gray-500 dark:text-gray-300">
+          <Typography className="text-gray-600 dark:text-gray-300">
             Telehealth is the distribution of health-related services and information via electronic
             information and telecommunication technologies.
           </Typography>
@@ -80,7 +80,7 @@ export function CustomizedAccordions() {
           <Typography className="font-bold text-xl">What is telemedicine used for?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography className="text-gray-500 dark:text-gray-300">
+          <Typography className="text-gray-600 dark:text-gray-300">
             Telemedicine, which enables video or phone appointments between a patient and their
             health care practitioner, benefits both health and convenience. More health care
             providers are offering to “see” patients by computer and smartphone.
@@ -105,7 +105,7 @@ export function CustomizedAccordions() {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography className="text-gray-500 dark:text-gray-300">
+          <Typography className="text-gray-600 dark:text-gray-300">
             Telemedicine equipment kits often look like a sturdy briefcase or large medical kit.
             Inside, these kits may include a small computer with an integrated screen, a camera, and
             simple mobile medical devices.
@@ -130,7 +130,7 @@ export function CustomizedAccordions() {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography className="text-gray-500 dark:text-gray-300">
+          <Typography className="text-gray-600 dark:text-gray-300">
             With telemedicine, you don't have to drive to the doctor's office or clinic, park, walk
             or sit in a waiting room when you're sick. You can see your doctor from the comfort of
             your own bed or sofa. Virtual visits can be easier to fit into your busy schedule.
