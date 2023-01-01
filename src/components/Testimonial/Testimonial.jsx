@@ -48,6 +48,7 @@ export const Testimonial = () => {
                     <p className="font-bold text-2xl">
                       {PATIENT_TESTIMONIALS[personIndex].tagline}
                     </p>
+                    <img src="/assets/quote.png" alt="quote" className="w-10 h-10" />
                   </div>
                   <span className="flex space-x-1 mt-2">
                     {Array(5)
