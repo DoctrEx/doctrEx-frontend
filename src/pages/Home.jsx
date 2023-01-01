@@ -8,6 +8,7 @@ import { About } from "../components/About"
 import { DoctorContainer } from "../components/DoctorContainer"
 import { BookAppointment } from "../components/BookAppointment"
 import { Testimonial } from "../components/Testimonial"
+import { FAQ } from "../components/FAQ"
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
         <DoctorContainer />
         <BookAppointment />
         <Testimonial />
+        <FAQ />
       </main>
     </div>
   )

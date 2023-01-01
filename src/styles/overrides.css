@@ -1,3 +1,10 @@
 .label {
   @apply block;
 }
+
+.css-1w9hdth-MuiPaper-root-MuiAccordion-root::before,
+.css-5ldsf2-MuiPaper-root-MuiAccordion-root::before {
+  background-color: transparent;
+  -webkit-transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}

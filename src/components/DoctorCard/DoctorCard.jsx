@@ -18,7 +18,7 @@ export const DoctorCard = ({
         </div>
         <div className="px-5 border-0 border-solid border-b border-l border-r border-r-gray-300 border-l-gray-300 border-b-gray-300 hover:border-b-primary dark:border-r-gray-700 dark:border-l-gray-700 dark:border-b-gray-700 dark:hover:border-b-primaryLight w-full h-full rounded-b-2xl">
           <h3 className="mt-5 text-2xl">{name}</h3>
-          <div className="mt-3 w-full flex justify-between">
+          <div className="mt-4 w-full flex justify-between">
             <div className="bg-primaryLight text-primary font-bold py-1 px-2 rounded-md text-sm">
               {specialization}
             </div>
@@ -29,10 +29,10 @@ export const DoctorCard = ({
               </p>
             </div>
           </div>
-          <div className="mt-3">
+          <div className="mt-5">
             <p className="font-bold">{noOfPatients} Patients</p>
           </div>
-          <div className="mt-1 text-gray-500 font-semibold">
+          <div className="mt-2 text-gray-500 dark:text-gray-300">
             <p>{location}</p>
           </div>
         </div>

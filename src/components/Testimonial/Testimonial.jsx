@@ -32,7 +32,7 @@ export const Testimonial = () => {
                     </div>
                     <div>
                       <p className="font-bold text-2xl">{patient.name}</p>
-                      <p className={`${index === personIndex ? "text-gray-50" : "text-gray-500"}`}>
+                      <p className={`${index === personIndex ? "text-gray-50" : "text-gray-400"}`}>
                         Happy Patient
                       </p>
                     </div>
@@ -42,7 +42,7 @@ export const Testimonial = () => {
             </Grid>
 
             <Grid item xs={12} md={7}>
-              <div className="flex justify-start p-8 md:p-8 md:pt-4 border border-solid border-gray-100 shadow-lg rounded-2xl">
+              <div className="flex justify-start p-8 md:p-8 md:pt-4 border border-solid border-gray-300 dark:border-gray-700 shadow-lg rounded-2xl">
                 <div>
                   <div className="mt-4 flex justify-between">
                     <p className="font-bold text-2xl">
@@ -58,12 +58,12 @@ export const Testimonial = () => {
                       ))}
                   </span>
                   <div className="mt-8">
-                    <p className="text-gray-500 dark:text-white">
+                    <p className="text-gray-500 dark:text-gray-300">
                       {PATIENT_TESTIMONIALS[personIndex].testimonial_1}
                     </p>
                   </div>
                   <div className="mt-4">
-                    <p className="text-gray-500 dark:text-white">
+                    <p className="text-gray-500 dark:text-gray-300">
                       {PATIENT_TESTIMONIALS[personIndex].testimonial_2}
                     </p>
                   </div>
