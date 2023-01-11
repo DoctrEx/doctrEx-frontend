@@ -1,0 +1,152 @@
+.dashboard-page {
+  display: flex;
+}
+
+.sidebar {
+  flex: 0.5;
+}
+
+.container {
+  flex: 5;
+  background-color: rgb(217, 217, 217, 0.17);
+  height: 100vh;
+  width: 100vw;
+}
+
+.container-profile {
+  /* background-color: rgb(217, 217, 217, 0.17); */
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 10vh;
+  margin-right: 80px;
+  margin-top: 20px;
+}
+.container-profile-picture {
+  /* background-color: rgb(217, 217, 217, 0.17); */
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-right: 15px;
+}
+
+.container-intro {
+  color: rgb(50, 49, 49);
+  /* background-color: rgb(217, 217, 217, 0.17); */
+  height: 15vh;
+  /* font-size: 36px; */
+  /* font-weight: bold; */
+  padding-left: 15px;
+  padding-top: 20px;
+}
+
+.container-content {
+  display: flex;
+  height: 75vh;
+  /* row-gap: 10px; */
+  column-gap: 20px;
+}
+.container-content-1 {
+  display: flex;
+  flex-direction: column;
+  flex: 2.5;
+  margin: 5px;
+  margin-bottom: 40px; /* background-color: rgb(120, 26, 26); */
+}
+.container-content-1-graph {
+  flex: 1;
+  background-color: white;
+  margin-bottom: 5px;
+  border-radius: 20px;
+}
+.container-content-1-report {
+  flex: 1.5;
+  background-color: white;
+  margin-top: 5px;
+  border-radius: 20px;
+}
+.container-report-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 25px;
+}
+.container-content-2 {
+  flex: 1;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+.container-content-2-appointment {
+  flex: 2;
+  background-color: white;
+  margin-bottom: 5px;
+  /* height: 10px; */
+  border-radius: 20px;
+}
+.container-content-2-review {
+  flex: 1;
+  background-color: white;
+  margin-top: 5px;
+  padding-left: 15px;
+  /* height: 5px; */
+  border-radius: 20px;
+}
+.container-content-2-review-main {
+  display: flex;
+  flex-direction: row;
+}
+.container-content-2-review-1 {
+  flex: 1;
+}
+.container-content-2-review-2 {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  flex: 3;
+  padding-left: 5px;
+}
+.container-content-2-review-3 {
+  flex: 1;
+}
+.container-content-2-review-picture {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.container-content-2-appointment-main {
+  display: flex;
+  flex-direction: row;
+}
+.container-content-2-appointment-main:hover {
+  background: rgb(217, 217, 217, 0.6);
+  border-radius: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.container-content-2-appointment-1 {
+  flex: 1;
+  padding-left: 25px;
+}
+.container-content-2-appointment-2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  flex: 2;
+}
+
+.container-content-2-appointment-picture {
+  width: 50px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-top: 15px;
+}
