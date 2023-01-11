@@ -1,11 +1,83 @@
 import React, { useState } from "react";
-import { Container } from "@mui/material";
+import { Container, Paper } from "@mui/material";
 import Sidebar from "../components/Navbar";
 import "./dashboard.css";
+import Chart from "react-apexcharts";
+import { Box } from "@mui/system";
 // import DenseTable from "../components/Table";
 // import DataTableResponsiveDemo from "../components/Table";
 
 const Dashboard = () => {
+  const pieOptions = {
+    dataLabels: { enabled: false },
+    legend: {
+      position: "bottom",
+      show: false,
+    },
+    colors: ["#ffa9dc", "#b2b0f7", "#ffe993"],
+    // stroke:{
+    //   colors:['#002']
+    //  },
+  };
+  const pieSeries = [10, 20, 70];
+  const barOptions = {
+    colors: ["#ff4a8b"],
+    dataLabels: { enabled: false },
+    grid: {
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: false,
+        },
+      },
+    },
+    xaxis: {
+      axisBorder: {
+        show: true,
+        color: "#000",
+      },
+      labels: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+    },
+  };
+  const barSeries = [
+    {
+      data: [
+        {
+          x: "category A",
+          y: 10,
+        },
+        {
+          x: "category B",
+          y: 18,
+        },
+        {
+          x: "category C",
+          y: 13,
+        },
+        {
+          x: "category A",
+          y: 10,
+        },
+        {
+          x: "category B",
+          y: 18,
+        },
+        {
+          x: "category C",
+          y: 13,
+        },
+      ],
+    },
+  ];
   // eslint-disable-next-line
   const [name, setName] = useState("Sofia Gill");
   // eslint-disable-next-line
@@ -104,7 +176,30 @@ const Dashboard = () => {
 
         <div className="container-content">
           <div className="container-content-1">
-            <div className="container-content-1-graph"></div>
+            <div className="container-content-1-graph">
+              {/* <Chart 
+              type="pie"
+              series={[10, 50, 40]}
+              width={200}
+              height={200}
+              /> */}
+              <Box sx={{display: 'flex', paddingTop: 3, paddingBottom: 3}} flexDirection='row' justifyContent='flex-start' alignItems='center'>
+                <Chart
+                  options={pieOptions}
+                  series={pieSeries}
+                  type="pie"
+                  width="400"
+                  height="250"
+                />
+                <Chart
+                  options={barOptions}
+                  series={barSeries}
+                  type="bar"
+                  width="400"
+                  height="200"
+                />
+              </Box>
+            </div>
             <div className="container-content-1-report">
               <h3 style={{ paddingLeft: 35, paddingTop: 10, fontSize: 20 }}>
                 Test Results
