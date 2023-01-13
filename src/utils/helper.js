@@ -7,3 +7,12 @@ export const isEmail = (email) => {
     return false
   }
 }
+
+export function getStyles(name, personName, theme) {
+  return {
+    fontWeight:
+      personName.indexOf(name) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+  }
+}

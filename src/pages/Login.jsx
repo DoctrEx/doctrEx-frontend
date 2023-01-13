@@ -16,8 +16,8 @@ const Login = () => {
   const [isError, setIsError] = useState(false)
 
   // login handler
-  const loginHandler = (e) => {
-    e.preventDefault()
+  const loginHandler = (event) => {
+    event.preventDefault()
     if (!isEmail(email)) {
       setIsError(true)
       return
@@ -54,7 +54,7 @@ const Login = () => {
                   variant="outlined"
                   fullWidth
                   error={isError}
-                  helperText={isError ? "Please enter correct email address" : ""}
+                  helperText={isError ? "Please enter valid email address" : ""}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />

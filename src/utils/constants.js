@@ -103,3 +103,29 @@ export const PATIENT_TESTIMONIALS = [
       "As part of his remarks, he added that he would heartily endorse Anavara for those seeking medical care abroad. Air Amblance service and medical tourism. Global Facilitators for Health & Wellness.",
   },
 ]
+
+export const CHRONICAL_DISEASES = [
+  "Diabetes",
+  "Arthritis",
+  "Cancer",
+  "High cholesterol",
+  "Hypertension",
+  "Chronic kidney disease (CKD)",
+  "Heart failure",
+  "Depression",
+  "Asthma",
+  "Osteoporosis",
+]
+
+export const SPECIALITIES = [
+  "Psychiatry",
+  "Cardiologist",
+  "Dermatology",
+  "Otolaryngology",
+  "Oncology",
+  "Family Medicine",
+  "Internal Medicine",
+  "Pediatrics",
+  "Obstetrics & Gynecology",
+  "Surgery",
+]
