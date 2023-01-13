@@ -115,6 +115,7 @@ const LIGHT = {
           "& .MuiFilledInput-root": {
             backgroundColor: themeColor.gray[100],
             borderRadius: "4px",
+            
 
             "&.Mui-focused:after": { opacity: 1 },
             "& fieldset": { border: 0 },

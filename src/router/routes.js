@@ -1,4 +1,6 @@
 import Home from "../pages/Home"
+import Login from "../pages/Login"
+import Signup from "../pages/Signup"
 
 // BASIC URLS
 export const URL_HOME = "/"
@@ -12,10 +14,10 @@ export const OPEN_ROUTES = [
   },
   {
     path: URL_SIGNUP,
-    element: <h1>Sign Up page</h1>
+    element: <Signup />
   },
   {
     path: URL_LOGIN,
-    element: <h1>Login Page</h1>
+    element: <Login />
   }
 ]
