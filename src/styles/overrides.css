@@ -13,3 +13,7 @@
 .css-t3qdwh-MuiFormLabel-root-MuiInputLabel-root {
   top: -5px;
 }
+
+.MuiFormControl-root.MuiTextField-root.css-cczfs4-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+}
