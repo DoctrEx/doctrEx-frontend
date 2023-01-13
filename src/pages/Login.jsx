@@ -1,21 +1,29 @@
-import React, { useState } from "react";
-import { Grid, Button } from "@mui/material";
-import {
-  TextField,
-  OutlinedInput,
-  InputAdornment,
-  IconButton,
-} from "@mui/material";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { Link } from "react-router-dom";
-import { URL_SIGNUP, URL_HOME } from "../router/routes";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import React, { useState } from "react"
+import { Grid, Button } from "@mui/material"
+import { TextField, OutlinedInput, InputAdornment, IconButton } from "@mui/material"
+import Visibility from "@mui/icons-material/Visibility"
+import VisibilityOff from "@mui/icons-material/VisibilityOff"
+import { Link } from "react-router-dom"
+import { URL_SIGNUP, URL_HOME } from "../router/routes"
+import ArrowBackIcon from "@mui/icons-material/ArrowBack"
+import { isEmail } from "../utils/helper"
 
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  // reactive variables
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [showPassword, setShowPassword] = useState(false)
+  const [isError, setIsError] = useState(false)
 
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  // login handler
+  const loginHandler = (e) => {
+    e.preventDefault()
+    if (!isEmail(email)) {
+      setIsError(true)
+      return
+    }
+    alert(JSON.stringify({ email, password }))
+  }
 
   return (
     <Grid container className="h-screen">
@@ -30,19 +38,26 @@ const Login = () => {
           </div>
           <div className="w-3/4 p-5">
             <div className="mb-10">
-              <h1 className="m-0 p-0 text-4xl mb-2 text-gray-800">
-                Welcome Back!
-              </h1>
+              <h1 className="m-0 p-0 text-4xl mb-2 text-gray-800">Welcome Back!</h1>
               <p className="text-[1.1rem] md:text-md text-gray-500">
                 Please enter your credentials to login.
               </p>
             </div>
-            <form action="" method="POST" className="mt-5">
+            <form method="POST" onSubmit={loginHandler} className="mt-5">
               <div className="my-5">
                 <label htmlFor="email" className="mb-2">
                   Email
                 </label>
-                <TextField required id="email" variant="outlined" fullWidth />
+                <TextField
+                  required
+                  id="email"
+                  variant="outlined"
+                  fullWidth
+                  error={isError}
+                  helperText={isError ? "Please enter correct email address" : ""}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
               <div className="my-5">
                 <label htmlFor="password" className="mb-2">
@@ -52,11 +67,13 @@ const Login = () => {
                   fullWidth
                   id="password"
                   type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   endAdornment={
                     <InputAdornment position="end">
                       <IconButton
                         aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
+                        onClick={() => setShowPassword((show) => !show)}
                         edge="end"
                       >
                         {showPassword ? <VisibilityOff /> : <Visibility />}
@@ -66,12 +83,7 @@ const Login = () => {
                 />
               </div>
               <div className="my-5">
-                <Button
-                  type="submit"
-                  variant="contained"
-                  fullWidth
-                  className="py-3"
-                >
+                <Button type="submit" variant="contained" fullWidth className="py-3">
                   Login
                 </Button>
               </div>
@@ -93,7 +105,7 @@ const Login = () => {
         </div>
       </Grid>
     </Grid>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
