@@ -113,6 +113,7 @@ const Appointment = () => {
       )
     );
   };
+  console.log("pain")
   const report1 = sudo.map((item) => (
     <div className="container-appointment-row">
       <div className="container-content-info">

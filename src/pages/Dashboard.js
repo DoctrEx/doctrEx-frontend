@@ -78,6 +78,7 @@ const Dashboard = () => {
       ],
     },
   ];
+  console.log("pain")
   // eslint-disable-next-line
   const [name, setName] = useState("Sofia Gill");
   // eslint-disable-next-line

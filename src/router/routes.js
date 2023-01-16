@@ -6,7 +6,7 @@ import BookAppointment from "../pages/Book-Appointment";
 import ConfirmAppointment from "../pages/Confirm-Appointment";
 // import Nearme from "../pages/Nearme";
 import { MapComponent } from "../pages/Map";
-
+console.log("pain")
 // BASIC URLS
 export const URL_HOME = "/";
 export const URL_LOGIN = "/login";

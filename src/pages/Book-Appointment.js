@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 const BookAppointment = () => {
   // eslint-disable-next-line
+  console.log("pain")
   const [name, setName] = useState("Sofia Gill");
   const data = [
     {
