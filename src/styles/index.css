@@ -4,6 +4,8 @@
 /* @tailwind base;  */
 
 /* Custom component */
+/* @tailwind components;  */
+/* @tailwind base;  */
 @tailwind components;
 
 /* overrides and globals should be after themes. */
@@ -11,6 +13,7 @@
 @import "./overrides.css";
 
 /* utils and helpers should be after everything */
+/* @tailwind utilities;  */
 @tailwind utilities;
 
 /* Styles for font-awesome icons  */

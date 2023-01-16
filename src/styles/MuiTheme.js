@@ -24,7 +24,7 @@ const LIGHT = {
       white: themeColor.white,
     },
     background: {
-      default: themeColor.neutral[100],
+      default: themeColor.white,
       paper: themeColor.white,
     },
   },
@@ -52,7 +52,6 @@ const LIGHT = {
           minWidth: "unset",
           textTransform: "inherit",
           boxShadow: "none",
-          ":hover": { boxShadow: "none", backgroundColor: "#0036C8" },
         },
       },
     },
@@ -116,6 +115,7 @@ const LIGHT = {
           "& .MuiFilledInput-root": {
             backgroundColor: themeColor.gray[100],
             borderRadius: "4px",
+            
 
             "&.Mui-focused:after": { opacity: 1 },
             "& fieldset": { border: 0 },
@@ -129,8 +129,38 @@ const LIGHT = {
         root: {},
         maxWidthLg: {
           "&.MuiContainer-maxWidthLg": {
-            maxWidth: 1300,
+            maxWidth: 1200,
           },
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#FFFFFF",
+          color: "#0061FF",
+          boxShadow: "0 .5rem 1rem rgba(0,0,0,.15)",
+          marginBottom: "3rem",
+        },
+      },
+    },
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          display: "flex",
+          justifyContent: "space-between",
+        },
+        dense: {
+          height: 50,
+          minHeight: 50,
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          width: "100%",
+          boxShadow: "0 .5rem 1rem rgba(0,0,0,.15)",
         },
       },
     },
@@ -175,6 +205,27 @@ const DARK = deepmerge(
       background: {
         default: themeColor.neutral[900],
         paper: themeColor.black,
+      },
+    },
+    components: {
+      MuiAppBar: {
+        styleOverrides: {
+          root: {
+            backgroundColor: "#000",
+            color: "#FFF",
+          },
+        },
+      },
+      MuiButton: {
+        defaultProps: { disableElevation: true },
+        styleOverrides: {
+          root: {
+            minWidth: "unset",
+            textTransform: "inherit",
+            boxShadow: "none",
+            color: "#FFFFFF",
+          },
+        },
       },
     },
   }

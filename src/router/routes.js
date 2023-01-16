@@ -1,4 +1,7 @@
-import Home from "../pages/Home";
+import Home from "../pages/Home"
+import Login from "../pages/Login"
+import Signup from "../pages/Signup"
+
 import Payment from "../pages/Payment";
 import Dashboard from "../pages/Dashboard";
 import Appointment from "../pages/Appointment";
@@ -28,7 +31,14 @@ export const OPEN_ROUTES = [
   //   element: <MapComponent />,
   // },
   {
-    path: URL_PAYMENT,
+    path: URL_SIGNUP,
+    element: <Signup />
+  },
+  {
+    path: URL_LOGIN,
+    element: <Login />
+  },
+  { path: URL_PAYMENT,
     element: <Payment />,
   },
   {
@@ -55,4 +65,4 @@ export const OPEN_ROUTES = [
     path: URL_SIGNUP,
     element: <h1>Sign Up page</h1>,
   },
-];
+]
