@@ -6,9 +6,11 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import ReplyIcon from "@mui/icons-material/Reply";
+import { Link } from "react-router-dom";
 
 const BookAppointment = () => {
   // eslint-disable-next-line
+  console.log("pain")
   const [name, setName] = useState("Sofia Gill");
   const data = [
     {
@@ -17,6 +19,7 @@ const BookAppointment = () => {
       speciality: "Cardiology",
       price: 100,
       status: "Complete",
+      goto: "/appointment/confirm",
     },
     {
       img: "/assets/iqra.jpg",
@@ -24,6 +27,7 @@ const BookAppointment = () => {
       speciality: "Cardiology",
       price: 170,
       status: "Pending",
+      goto: "/appointment/confirm",
     },
     {
       img: "/assets/Nasia.jpg",
@@ -31,6 +35,7 @@ const BookAppointment = () => {
       speciality: "Cardiology",
       price: 200,
       status: "Complete",
+      goto: "/appointment/confirm",
     },
     {
       img: "/assets/doctor.jpg",
@@ -38,6 +43,7 @@ const BookAppointment = () => {
       speciality: "Cardiology",
       price: 156,
       status: "Complete",
+      goto: "/appointment/confirm",
     },
     {
       img: "/assets/Ben.jpg",
@@ -45,6 +51,7 @@ const BookAppointment = () => {
       speciality: "Cardiology",
       price: 194,
       status: "Pending",
+      goto: "/appointment/confirm",
     },
     {
       img: "/assets/Samar.jpg",
@@ -52,6 +59,7 @@ const BookAppointment = () => {
       speciality: "Cardiology",
       price: 135,
       status: "Complete",
+      goto: `/appointment/confirm?${name}`,
     },
   ];
 
@@ -68,22 +76,25 @@ const BookAppointment = () => {
       </div>
       <div>{item.speciality}</div>
       <div>{item.price}$</div>
-      <button
-        style={{
-          color: "rgb(0, 97, 255)",
-          borderRadius: 20,
-          backgroundColor: "rgb(0, 97, 255,0.25)",
-          width: 80,
-          height: 30,
-          border: "none",
-          fontWeight: "bold",
-          transform: "scaleX(-1)",
-        }}
-      >
-        <div>
-          <ReplyIcon style={{ fontSize: "30" }} />
-        </div>
-      </button>
+      <Link to={item.goto}>
+        <button
+          style={{
+            color: "rgb(0, 97, 255)",
+            borderRadius: 20,
+            backgroundColor: "rgb(0, 97, 255,0.25)",
+            width: 80,
+            height: 30,
+            border: "none",
+            fontWeight: "bold",
+            transform: "scaleX(-1)",
+            cursor: "pointer"
+          }}
+        >
+          <div>
+            <ReplyIcon style={{ fontSize: "30" }} />
+          </div>
+        </button>
+      </Link>
     </div>
   ));
 

@@ -78,6 +78,7 @@ const Dashboard = () => {
       ],
     },
   ];
+  console.log("pain")
   // eslint-disable-next-line
   const [name, setName] = useState("Sofia Gill");
   // eslint-disable-next-line
@@ -95,6 +96,21 @@ const Dashboard = () => {
       date: "23/1/2022",
     },
     { type: "4D Scan", result: "pending", date: "23/1/2022" },
+    {
+      type: "Glucose",
+      result: "Typical result",
+      date: "23/1/2022",
+    },
+    {
+      type: "Glucose",
+      result: "Typical result",
+      date: "23/1/2022",
+    },
+    {
+      type: "Glucose",
+      result: "Typical result",
+      date: "23/1/2022",
+    },
     {
       type: "Glucose",
       result: "Typical result",

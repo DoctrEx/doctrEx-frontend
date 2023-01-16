@@ -4,13 +4,14 @@ import Dashboard from "../pages/Dashboard";
 import Appointment from "../pages/Appointment";
 import BookAppointment from "../pages/Book-Appointment";
 import ConfirmAppointment from "../pages/Confirm-Appointment";
-import Nearme from "../pages/Nearme";
-
+// import Nearme from "../pages/Nearme";
+import { MapComponent } from "../pages/Map";
+console.log("pain")
 // BASIC URLS
 export const URL_HOME = "/";
 export const URL_LOGIN = "/login";
 export const URL_SIGNUP = "/signup";
-export const URL_MAP = "/map";
+// export const URL_MAP = "/map";
 export const URL_PAYMENT = "/payment";
 export const URL_DASHBOARD = "/dashboard";
 export const URL_APPOINTMENT = "/appointment";
@@ -22,10 +23,10 @@ export const OPEN_ROUTES = [
     path: URL_HOME,
     element: <Home />,
   },
-  {
-    path: URL_MAP,
-    element: <Nearme />,
-  },
+  // {
+  //   path: URL_MAP,
+  //   element: <MapComponent />,
+  // },
   {
     path: URL_PAYMENT,
     element: <Payment />,

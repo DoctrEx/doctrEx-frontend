@@ -28,7 +28,7 @@ function Sidebar(props) {
   // const handleDrawerToggle = () => {
   //   setMobileOpen(!mobileOpen);
   // };
-
+  console.log("pain")
   const icons = [
     <HomeIcon className="icon" />,
     <PersonIcon className="icon" />,

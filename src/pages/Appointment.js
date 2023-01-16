@@ -5,7 +5,7 @@ import "./appointment.css";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
-
+import { Link } from "react-router-dom";
 // import DenseTable from "../components/Table";
 // import DataTableResponsiveDemo from "../components/Table";
 
@@ -42,6 +42,48 @@ const Appointment = () => {
       status: "Complete",
     },
     {
+      img: "/assets/doctor.jpg",
+      name: "Dr.Angil",
+      speciality: "Cardiology",
+      date: "2022/03/07",
+      status: "Complete",
+    },
+    {
+      img: "/assets/doctor.jpg",
+      name: "Dr.Angil",
+      speciality: "Cardiology",
+      date: "2022/03/07",
+      status: "Complete",
+    },
+    {
+      img: "/assets/doctor.jpg",
+      name: "Dr.Angil",
+      speciality: "Dermatology",
+      date: "2022/03/07",
+      status: "Complete",
+    },
+    {
+      img: "/assets/doctor.jpg",
+      name: "Dr.Angil",
+      speciality: "Cardiology",
+      date: "2021/03/07",
+      status: "Complete",
+    },
+    {
+      img: "/assets/doctor.jpg",
+      name: "Dr.Angil",
+      speciality: "Cardiology",
+      date: "2022/03/07",
+      status: "Complete",
+    },
+    {
+      img: "/assets/doctor.jpg",
+      name: "Dr.Angil",
+      speciality: "Cardiology",
+      date: "2022/03/07",
+      status: "Complete",
+    },
+    {
       img: "/assets/Ben.jpg",
       name: "Dr.Benne",
       speciality: "Cardiology",
@@ -57,7 +99,22 @@ const Appointment = () => {
     },
   ];
 
-  const report1 = data.map((item) => (
+  const [sudo, setsudo] = useState(data);
+  const [searchText, setSearchText] = useState("");
+  const searchHandler = (e) => {
+    console.log(e.target.value);
+    setSearchText(e.target.value);
+    setsudo(
+      data.filter(
+        (data) =>
+          data.name.toLowerCase().includes(e.target.value) ||
+          data.speciality.toLowerCase().includes(e.target.value) ||
+          data.date.includes(e.target.value) 
+      )
+    );
+  };
+  console.log("pain")
+  const report1 = sudo.map((item) => (
     <div className="container-appointment-row">
       <div className="container-content-info">
         <img
@@ -112,6 +169,8 @@ const Appointment = () => {
               variant="outlined"
               fullWidth
               label="Search"
+              value={searchText}
+              onChange={searchHandler}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -123,7 +182,11 @@ const Appointment = () => {
           </div>
           <div className="container-get">
             <button className="container-get-appointment">
+              <Link               to={"/appointment/book"}
+              style={{ textDecoration: "none" }}>
+              
               Get Appointment
+              </Link>
             </button>
           </div>
         </div>

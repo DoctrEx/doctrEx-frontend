@@ -14,6 +14,7 @@ const ConfirmAppointment = () => {
     price: 200,
     time: ["12:00-12:15", "12:15-12:30", "12:30-12:45", "12:45-1:00"],
   };
+  console.log("pain")
   const time = data.time.map((item) => (
     <h3 className="container-time" onClick={() => console.log(item)}>
       {item}
