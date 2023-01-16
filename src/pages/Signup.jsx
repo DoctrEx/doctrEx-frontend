@@ -45,9 +45,9 @@ const Signup = () => {
   const [country, setCountry] = useState({ value: "", error: false })
   const [address, setAddress] = useState({ value: "", error: false })
   const [date, setDate] = useState(dayjs("2000-01-18T21:11:54"))
-  const [chronicalDiseases, setChronicalDiseases] = useState({ value: [null], error: false })
-  const [speciality, setSpeciality] = useState({ value: [null], error: false })
-  const [specialityLevel, setSpecialityLevel] = useState({ value: 0, error: false })
+  const [chronicalDiseases, setChronicalDiseases] = useState({ value: [], error: false })
+  const [speciality, setSpeciality] = useState({ value: [], error: false })
+  const [specialityLevel, setSpecialityLevel] = useState({ value: "", error: false })
 
   // Chronical Diseases Handler
   const chronicalDiseasesHandler = (event) => {
@@ -80,47 +80,37 @@ const Signup = () => {
       !password.value ||
       !address.value ||
       !country.value ||
-      !chronicalDiseases.value.length ||
-      !speciality.value.length ||
-      !specialityLevel.value
+      (!chronicalDiseases.value.length && isPatient) ||
+      (!speciality.value.length && !isPatient) ||
+      (!specialityLevel.value && !isPatient)
     ) {
       !isEmail(email.value) && setEmail((prevEmailObj) => ({ ...prevEmailObj, error: true }))
       !name.value && setName((prevNameObj) => ({ ...prevNameObj, error: true }))
       !password.value && setPassword((prevPasswordObj) => ({ ...prevPasswordObj, error: true }))
       !address.value && setAddress((prevAddressObj) => ({ ...prevAddressObj, error: true }))
       !country.value && setCountry((prevCountryObj) => ({ ...prevCountryObj, error: true }))
-      if (isPatient) {
-        !chronicalDiseases.value.length &&
-          setChronicalDiseases((prevChronicalDiseasesObj) => ({
-            ...prevChronicalDiseasesObj,
-            error: true,
-          }))
-      } else {
-        !speciality.value.length &&
-          setSpeciality((prevSpecialityObj) => ({ ...prevSpecialityObj, error: true }))
-        !specialityLevel.value &&
-          setSpecialityLevel((prevSpecialityLevelObj) => ({
-            ...prevSpecialityLevelObj,
-            error: true,
-          }))
-      }
+      !chronicalDiseases.value.length &&
+        setChronicalDiseases((prevChronicalDiseasesObj) => ({
+          ...prevChronicalDiseasesObj,
+          error: true,
+        }))
+      !speciality.value.length &&
+        setSpeciality((prevSpecialityObj) => ({ ...prevSpecialityObj, error: true }))
+      !specialityLevel &&
+        setSpecialityLevel((prevSpecialityLevelObj) => ({
+          ...prevSpecialityLevelObj,
+          error: true,
+        }))
       return
     }
-    // if (isPatient) {
-    // } else {
-    //   setChronicalDiseases((prevChronicalDiseasesObj) => ({
-    //     ...prevChronicalDiseasesObj,
-    //     value: [null],
-    //   }))
-    // }
     alert(
       JSON.stringify({
         name: name.value,
         email: email.value,
         password: password.value,
-        date,
         country: country.value,
         address: address.value,
+        date: date.value,
         chronicalDiseases: chronicalDiseases.value,
         speciality: speciality.value,
         specialityLevel: specialityLevel.value,
@@ -292,7 +282,7 @@ const Signup = () => {
                 </div>
               </div>
 
-              {/* Chronical diseases container  */}
+              {/* Chronical diseases container --> (FOR PATIENTS ONLY)  */}
               <div className={`space-x-4 my-5 ${isPatient ? "flex" : "hidden"}`}>
                 {/* Chronical diseases field  */}
                 <div className="w-full">
@@ -335,7 +325,7 @@ const Signup = () => {
                 </div>
               </div>
 
-              {/* Speciality and speciality level Container  */}
+              {/* Speciality and speciality level Container --> (FOR DOCTORS ONLY)  */}
               <div className={`space-x-4 my-5 ${isPatient ? "hidden" : "flex"}`}>
                 {/* Speciality field  */}
 
