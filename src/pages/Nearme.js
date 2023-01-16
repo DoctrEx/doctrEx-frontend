@@ -4,8 +4,8 @@ import GoogleMapReact from 'google-map-react';
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export default function Nearme(){
-  const [latitude, setLatitude] = useState(0)
-  const [longitude, setLongitude] = useState(0)
+  const [latitude, setLatitude] = useState(59.955413)
+  const [longitude, setLongitude] = useState(30.337844)
   useEffect(()=>{
     navigator.geolocation.getCurrentPosition(function(position) {
       setLatitude(position.coords.latitude)

@@ -101,6 +101,21 @@ const Dashboard = () => {
       date: "23/1/2022",
     },
     {
+      type: "Glucose",
+      result: "Typical result",
+      date: "23/1/2022",
+    },
+    {
+      type: "Glucose",
+      result: "Typical result",
+      date: "23/1/2022",
+    },
+    {
+      type: "Glucose",
+      result: "Typical result",
+      date: "23/1/2022",
+    },
+    {
       type: "2D Echo",
       result: "Typical result",
       date: "23/1/2022",
