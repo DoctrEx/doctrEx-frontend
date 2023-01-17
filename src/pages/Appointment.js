@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 const Appointment = () => {
   // eslint-disable-next-line
+  console.log("pain");
   const [name, setName] = useState("Sofia Gill");
   const data = [
     {
@@ -109,11 +110,11 @@ const Appointment = () => {
         (data) =>
           data.name.toLowerCase().includes(e.target.value) ||
           data.speciality.toLowerCase().includes(e.target.value) ||
-          data.date.includes(e.target.value) 
+          data.date.includes(e.target.value)
       )
     );
   };
-  console.log("pain")
+  console.log("pain");
   const report1 = sudo.map((item) => (
     <div className="container-appointment-row">
       <div className="container-content-info">
@@ -182,10 +183,8 @@ const Appointment = () => {
           </div>
           <div className="container-get">
             <button className="container-get-appointment">
-              <Link               to={"/appointment/book"}
-              style={{ textDecoration: "none" }}>
-              
-              Get Appointment
+              <Link to={"/appointment/book"} style={{ textDecoration: "none" }}>
+                Get Appointment
               </Link>
             </button>
           </div>
