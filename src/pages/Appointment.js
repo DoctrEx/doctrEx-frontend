@@ -108,9 +108,11 @@ const Appointment = () => {
     setsudo(
       data.filter(
         (data) =>
-          data.name.toLowerCase().includes(e.target.value) ||
-          data.speciality.toLowerCase().includes(e.target.value) ||
-          data.date.includes(e.target.value)
+          data.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          data.speciality
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase()) ||
+          data.date.includes(e.target.value.toLowerCase())
       )
     );
   };

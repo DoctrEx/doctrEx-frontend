@@ -78,9 +78,9 @@ const Dashboard = () => {
       ],
     },
   ];
-  console.log("pain")
+  console.log("pain");
   // eslint-disable-next-line
-  const [name, setName] = useState("Sofia Gill");
+  const [name, setName] = useState(localStorage.getItem("name"));
   // eslint-disable-next-line
   const [review, setReview] = useState({
     name: "Dr.Angilina",
@@ -199,7 +199,12 @@ const Dashboard = () => {
               width={200}
               height={200}
               /> */}
-              <Box sx={{display: 'flex', paddingTop: 3, paddingBottom: 3}} flexDirection='row' justifyContent='flex-start' alignItems='center'>
+              <Box
+                sx={{ display: "flex", paddingTop: 3, paddingBottom: 3 }}
+                flexDirection="row"
+                justifyContent="flex-start"
+                alignItems="center"
+              >
                 <Chart
                   options={pieOptions}
                   series={pieSeries}

@@ -49,7 +49,23 @@ const Payment = () => {
     },
   ];
 
-  const report1 = data.map((item) => (
+  const [sudo, setsudo] = useState(data);
+  const [searchText, setSearchText] = useState("");
+  const searchHandler = (e) => {
+    console.log(e.target.value);
+    setSearchText(e.target.value);
+    setsudo(
+      data.filter(
+        (data) =>
+          data.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          data.speciality
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase()) ||
+          data.price.toString().includes(e.target.value.toLowerCase())
+      )
+    );
+  };
+  const report1 = sudo.map((item) => (
     <div className="container-book-appointment-row">
       <div className="container-content-info">
         <img
@@ -102,6 +118,8 @@ const Payment = () => {
               variant="outlined"
               fullWidth
               label="Search"
+              value={searchText}
+              onChange={searchHandler}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">

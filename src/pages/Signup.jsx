@@ -1,29 +1,35 @@
-import React, { useState } from "react"
-import { Grid, Button } from "@mui/material"
-import { TextField, OutlinedInput, InputAdornment, IconButton } from "@mui/material"
-import Visibility from "@mui/icons-material/Visibility"
-import VisibilityOff from "@mui/icons-material/VisibilityOff"
-import { Link } from "react-router-dom"
-import { URL_LOGIN, URL_HOME } from "../router/routes"
-import ArrowBackIcon from "@mui/icons-material/ArrowBack"
-import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker"
-import dayjs from "dayjs"
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider"
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs"
-import MenuItem from "@mui/material/MenuItem"
-import FormControl from "@mui/material/FormControl"
-import Select from "@mui/material/Select"
-import Chip from "@mui/material/Chip"
-import { useTheme } from "@mui/material/styles"
-import Box from "@mui/material/Box"
-import { CHRONICAL_DISEASES } from "../utils/constants"
-import { getStyles } from "../utils/helper"
-import { isEmail } from "../utils/helper"
-import { FormHelperText } from "@mui/material"
-import { SPECIALITIES } from "../utils/constants"
+import React, { useState } from "react";
+import { Grid, Button } from "@mui/material";
+import {
+  TextField,
+  OutlinedInput,
+  InputAdornment,
+  IconButton,
+} from "@mui/material";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { Link } from "react-router-dom";
+import { URL_LOGIN, URL_HOME } from "../router/routes";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+// import dayjs from "dayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import Chip from "@mui/material/Chip";
+import { useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import { CHRONICAL_DISEASES } from "../utils/constants";
+import { getStyles } from "../utils/helper";
+import { isEmail } from "../utils/helper";
+import { FormHelperText } from "@mui/material";
+import { SPECIALITIES } from "../utils/constants";
+import axios from "axios";
 
-const ITEM_HEIGHT = 48
-const ITEM_PADDING_TOP = 8
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
 const MenuProps = {
   PaperProps: {
     style: {
@@ -31,49 +37,56 @@ const MenuProps = {
       width: 250,
     },
   },
-}
+};
 
 const Signup = () => {
   // theme and other reactive vars
-  const theme = useTheme()
-  const [showPassword, setShowPassword] = useState(false)
-  const [isPatient, setIsPatient] = useState(true)
+  const theme = useTheme();
+  const [showPassword, setShowPassword] = useState(false);
+  const [isPatient, setIsPatient] = useState(true);
   // state vars for controlled i/p
-  const [name, setName] = useState({ value: "", error: false })
-  const [email, setEmail] = useState({ value: "", error: false })
-  const [password, setPassword] = useState({ value: "", error: false })
-  const [country, setCountry] = useState({ value: "", error: false })
-  const [address, setAddress] = useState({ value: "", error: false })
-  const [date, setDate] = useState(dayjs("2000-01-18T21:11:54"))
-  const [chronicalDiseases, setChronicalDiseases] = useState({ value: [], error: false })
-  const [speciality, setSpeciality] = useState({ value: [], error: false })
-  const [specialityLevel, setSpecialityLevel] = useState({ value: "", error: false })
+  const [name, setName] = useState({ value: "", error: false });
+  const [email, setEmail] = useState({ value: "", error: false });
+  const [password, setPassword] = useState({ value: "", error: false });
+  const [country, setCountry] = useState({ value: "", error: false });
+  const [address, setAddress] = useState({ value: "", error: false });
+  const [date, setDate] = useState({ value: "", error: false });
+  const [chronicalDiseases, setChronicalDiseases] = useState({
+    value: [],
+    error: false,
+  });
+  const [speciality, setSpeciality] = useState({ value: [], error: false });
+  const [specialityLevel, setSpecialityLevel] = useState({
+    value: "",
+    error: false,
+  });
+  const [role, setRole] = useState("patient");
 
   // Chronical Diseases Handler
   const chronicalDiseasesHandler = (event) => {
     const {
       target: { value },
-    } = event
+    } = event;
     setChronicalDiseases((prevChronicalDiseasesObj) => ({
       ...prevChronicalDiseasesObj,
       value: typeof value === "string" ? value.split(",") : value,
-    }))
-  }
+    }));
+  };
 
   // Speciality Handler
   const specialityHandler = (event) => {
     const {
       target: { value },
-    } = event
+    } = event;
     setSpeciality((prevSpecialityObj) => ({
       ...prevSpecialityObj,
       value: typeof value === "string" ? value.split(",") : value,
-    }))
-  }
+    }));
+  };
 
   // Signup Handler
   const signupHandler = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     if (
       !isEmail(email.value) ||
       !name.value ||
@@ -84,39 +97,57 @@ const Signup = () => {
       (!speciality.value.length && !isPatient) ||
       (!specialityLevel.value && !isPatient)
     ) {
-      !isEmail(email.value) && setEmail((prevEmailObj) => ({ ...prevEmailObj, error: true }))
-      !name.value && setName((prevNameObj) => ({ ...prevNameObj, error: true }))
-      !password.value && setPassword((prevPasswordObj) => ({ ...prevPasswordObj, error: true }))
-      !address.value && setAddress((prevAddressObj) => ({ ...prevAddressObj, error: true }))
-      !country.value && setCountry((prevCountryObj) => ({ ...prevCountryObj, error: true }))
+      !isEmail(email.value) &&
+        setEmail((prevEmailObj) => ({ ...prevEmailObj, error: true }));
+      !name.value &&
+        setName((prevNameObj) => ({ ...prevNameObj, error: true }));
+      !password.value &&
+        setPassword((prevPasswordObj) => ({ ...prevPasswordObj, error: true }));
+      !address.value &&
+        setAddress((prevAddressObj) => ({ ...prevAddressObj, error: true }));
+      !country.value &&
+        setCountry((prevCountryObj) => ({ ...prevCountryObj, error: true }));
       !chronicalDiseases.value.length &&
         setChronicalDiseases((prevChronicalDiseasesObj) => ({
           ...prevChronicalDiseasesObj,
           error: true,
-        }))
+        }));
       !speciality.value.length &&
-        setSpeciality((prevSpecialityObj) => ({ ...prevSpecialityObj, error: true }))
+        setSpeciality((prevSpecialityObj) => ({
+          ...prevSpecialityObj,
+          error: true,
+        }));
       !specialityLevel &&
         setSpecialityLevel((prevSpecialityLevelObj) => ({
           ...prevSpecialityLevelObj,
           error: true,
-        }))
-      return
+        }));
+      return;
     }
-    alert(
-      JSON.stringify({
-        name: name.value,
-        email: email.value,
-        password: password.value,
-        country: country.value,
-        address: address.value,
-        date: date.value,
-        chronicalDiseases: chronicalDiseases.value,
-        speciality: speciality.value,
-        specialityLevel: specialityLevel.value,
+    const values = {
+      name: name.value,
+      email: email.value,
+      password: password.value,
+      country: country.value,
+      address: address.value,
+      dateOfBirth: date.value,
+      chronicalDiseases: isPatient ? chronicalDiseases.toString() : null,
+      speciality: !isPatient ? speciality.value : null,
+      specialityLevel: !isPatient ? specialityLevel.value : null,
+      role: isPatient ? "patient" : "doctor",
+    };
+    console.log(values);
+    axios
+      .post(`http://127.0.0.1:8000/api/auth/signup`, values)
+      .then((res) => {
+        console.log(res.data);
+        alert(res.data.message);
       })
-    )
-  }
+      .catch((error) => {
+        console.error(error);
+        alert(error);
+      });
+  };
 
   return (
     <Grid container className="h-screen flex justify-center">
@@ -124,7 +155,10 @@ const Signup = () => {
         <div className="flex justify-center flex-col items-center h-full">
           <div className="p-5 absolute top-0 right-0">
             {/* Switch Button  */}
-            <Button variant="contained" onClick={() => setIsPatient((prevState) => !prevState)}>
+            <Button
+              variant="contained"
+              onClick={() => setIsPatient((prevState) => !prevState)}
+            >
               Register as {isPatient ? "Doctor" : "Patient"}
             </Button>
           </div>
@@ -160,7 +194,10 @@ const Signup = () => {
                     helperText={name.error ? "Name cannot be empty" : ""}
                     value={name.value}
                     onChange={(e) =>
-                      setName((prevNameObj) => ({ ...prevNameObj, value: e.target.value }))
+                      setName((prevNameObj) => ({
+                        ...prevNameObj,
+                        value: e.target.value,
+                      }))
                     }
                     id="name"
                     variant="outlined"
@@ -175,13 +212,18 @@ const Signup = () => {
                   </label>
                   <TextField
                     error={email.error}
-                    helperText={email.error ? "Please enter valid email address" : ""}
+                    helperText={
+                      email.error ? "Please enter valid email address" : ""
+                    }
                     id="email"
                     variant="outlined"
                     fullWidth
                     value={email.value}
                     onChange={(e) =>
-                      setEmail((prevEmailObj) => ({ ...prevEmailObj, value: e.target.value }))
+                      setEmail((prevEmailObj) => ({
+                        ...prevEmailObj,
+                        value: e.target.value,
+                      }))
                     }
                   />
                 </div>
@@ -254,7 +296,10 @@ const Signup = () => {
                     helperText={country.error ? "Country cannot be empty" : ""}
                     value={country.value}
                     onChange={(e) =>
-                      setCountry((prevCountryObj) => ({ ...prevCountryObj, value: e.target.value }))
+                      setCountry((prevCountryObj) => ({
+                        ...prevCountryObj,
+                        value: e.target.value,
+                      }))
                     }
                     id="country"
                     variant="outlined"
@@ -272,7 +317,10 @@ const Signup = () => {
                     helperText={address.error ? "Address cannot be empty" : ""}
                     value={address.value}
                     onChange={(e) =>
-                      setAddress((prevAddressObj) => ({ ...prevAddressObj, value: e.target.value }))
+                      setAddress((prevAddressObj) => ({
+                        ...prevAddressObj,
+                        value: e.target.value,
+                      }))
                     }
                     id="address"
                     variant="outlined"
@@ -283,7 +331,9 @@ const Signup = () => {
               </div>
 
               {/* Chronical diseases container --> (FOR PATIENTS ONLY)  */}
-              <div className={`space-x-4 my-5 ${isPatient ? "flex" : "hidden"}`}>
+              <div
+                className={`space-x-4 my-5 ${isPatient ? "flex" : "hidden"}`}
+              >
                 {/* Chronical diseases field  */}
                 <div className="w-full">
                   <label htmlFor="chronicalDiseases" className="mb-2">
@@ -298,9 +348,15 @@ const Signup = () => {
                       onChange={chronicalDiseasesHandler}
                       input={<OutlinedInput id="chronicalDiseases" />}
                       renderValue={(selected) => (
-                        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                        <Box
+                          sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}
+                        >
                           {selected.map((value) => (
-                            <Chip key={value} label={value} className="bg-primary text-white" />
+                            <Chip
+                              key={value}
+                              label={value}
+                              className="bg-primary text-white"
+                            />
                           ))}
                         </Box>
                       )}
@@ -310,7 +366,11 @@ const Signup = () => {
                         <MenuItem
                           key={disease}
                           value={disease}
-                          style={getStyles(disease, chronicalDiseases.value, theme)}
+                          style={getStyles(
+                            disease,
+                            chronicalDiseases.value,
+                            theme
+                          )}
                         >
                           {disease}
                         </MenuItem>
@@ -326,7 +386,9 @@ const Signup = () => {
               </div>
 
               {/* Speciality and speciality level Container --> (FOR DOCTORS ONLY)  */}
-              <div className={`space-x-4 my-5 ${isPatient ? "hidden" : "flex"}`}>
+              <div
+                className={`space-x-4 my-5 ${isPatient ? "hidden" : "flex"}`}
+              >
                 {/* Speciality field  */}
 
                 <div className="w-1/2">
@@ -342,9 +404,15 @@ const Signup = () => {
                       onChange={specialityHandler}
                       input={<OutlinedInput id="speciality" />}
                       renderValue={(selected) => (
-                        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                        <Box
+                          sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}
+                        >
                           {selected.map((value) => (
-                            <Chip key={value} label={value} className="bg-primary text-white" />
+                            <Chip
+                              key={value}
+                              label={value}
+                              className="bg-primary text-white"
+                            />
                           ))}
                         </Box>
                       )}
@@ -354,7 +422,11 @@ const Signup = () => {
                         <MenuItem
                           key={specialityName}
                           value={specialityName}
-                          style={getStyles(specialityName, speciality.value, theme)}
+                          style={getStyles(
+                            specialityName,
+                            speciality.value,
+                            theme
+                          )}
                         >
                           {specialityName}
                         </MenuItem>
@@ -375,7 +447,11 @@ const Signup = () => {
                   </label>
                   <TextField
                     error={specialityLevel.error}
-                    helperText={specialityLevel.error ? "Speciality Level cannot be empty" : ""}
+                    helperText={
+                      specialityLevel.error
+                        ? "Speciality Level cannot be empty"
+                        : ""
+                    }
                     id="Speciality Level"
                     variant="outlined"
                     fullWidth
@@ -393,7 +469,12 @@ const Signup = () => {
 
               {/* Signup Button */}
               <div className="my-5">
-                <Button type="submit" variant="contained" fullWidth className="py-3">
+                <Button
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                  className="py-3"
+                >
                   Signup
                 </Button>
               </div>
@@ -412,7 +493,7 @@ const Signup = () => {
         </div>
       </Grid>
     </Grid>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;

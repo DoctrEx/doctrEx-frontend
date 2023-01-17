@@ -28,7 +28,7 @@ function Sidebar(props) {
   // const handleDrawerToggle = () => {
   //   setMobileOpen(!mobileOpen);
   // };
-  console.log("pain")
+  console.log("pain");
   const icons = [
     <HomeIcon className="icon" />,
     <PersonIcon className="icon" />,
@@ -41,21 +41,26 @@ function Sidebar(props) {
       <h1 className="logo">DoctrEx</h1>
       {/* <Divider /> */}
       <List className="Box">
-        {["Dashboard", "Appointment", "Chat", "Payment", "Account"].map(
-          (text, index) => (
-            <Link
-              to={"/" + text.toLowerCase()}
-              style={{ textDecoration: "none" }}
-            >
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>{icons[index]}</ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            </Link>
-          )
-        )}
+        {[
+          "Dashboard",
+          "Appointment",
+          "Chat",
+          "Payment",
+          "Account",
+          "Logout",
+        ].map((text, index) => (
+          <Link
+            to={"/" + text.toLowerCase()}
+            style={{ textDecoration: "none" }}
+          >
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>{icons[index]}</ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+        ))}
       </List>
     </div>
   );
