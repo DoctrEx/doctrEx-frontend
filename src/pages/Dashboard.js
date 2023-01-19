@@ -8,6 +8,8 @@ import { Box } from "@mui/system";
 // import DataTableResponsiveDemo from "../components/Table";
 
 const Dashboard = () => {
+  const profilePicture = `/assets/${localStorage.getItem("profilePicture")}`;
+  // const profilePicture = `/assets/${localStorage.getItem("profilePicture")}`;
   const pieOptions = {
     dataLabels: { enabled: false },
     legend: {
@@ -180,7 +182,7 @@ const Dashboard = () => {
         <div className="container-profile">
           <img
             className="container-profile-picture"
-            src="/assets/sofia.jpg"
+            src={profilePicture}
             alt="profile"
           />
           <h2> {name} !</h2>
@@ -193,12 +195,6 @@ const Dashboard = () => {
         <div className="container-content">
           <div className="container-content-1">
             <div className="container-content-1-graph">
-              {/* <Chart 
-              type="pie"
-              series={[10, 50, 40]}
-              width={200}
-              height={200}
-              /> */}
               <Box
                 sx={{ display: "flex", paddingTop: 3, paddingBottom: 3 }}
                 flexDirection="row"
@@ -243,7 +239,7 @@ const Dashboard = () => {
                 <div className="container-content-2-review-1">
                   <img
                     className="container-content-2-review-picture"
-                    src="/assets/doctor.jpg"
+                    src="/assets/dr.25.jpg"
                     alt="profile"
                   />
                 </div>

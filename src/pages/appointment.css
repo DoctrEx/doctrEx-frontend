@@ -1,5 +1,6 @@
 .appointment-page {
   display: flex;
+  background-color: rgb(217, 217, 217, 0.17);
 }
 
 .sidebar {
@@ -8,9 +9,10 @@
 
 .appointment-container {
   flex: 5;
-  background-color: rgb(217, 217, 217, 0.17);
+  /* background-color: rgb(217, 217, 217, 0.17); */
   height: 100vh;
   width: 100vw;
+  margin-right: 50px;
 }
 
 .container-profile {

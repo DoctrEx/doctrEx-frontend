@@ -2,12 +2,14 @@ export const SERVICES = [
   {
     icon: "/assets/nurse.png",
     title: "Search Doctor",
-    description: "Search the best doctors near you available 24/7 for your help.",
+    description:
+      "Search the best doctors near you available 24/7 for your help.",
   },
   {
     icon: "/assets/phone-message.png",
     title: "Request Consultation",
-    description: "Request for consultation with the doctor you prefer for your issues.",
+    description:
+      "Request for consultation with the doctor you prefer for your issues.",
   },
   {
     icon: "/assets/wall-calendar.png",
@@ -17,27 +19,28 @@ export const SERVICES = [
   {
     icon: "/assets/medical-history.png",
     title: "Get Treatments",
-    description: "Get specialized treatments of varying durations from our experts.",
+    description:
+      "Get specialized treatments of varying durations from our experts.",
   },
-]
+];
 
 export const ABOUT_CHECK_POINTS = [
   {
     description: "We practice medicine that are historical",
   },
   { description: "We have access to amazing treatments" },
-]
+];
 
 export const APPOINTMENT_CHECK_POINTS = [
   {
     description: "We practice medicine that are historical",
   },
   { description: "We have access to amazing treatments" },
-]
+];
 
 export const DOCTORS = [
   {
-    picture: "/assets/doctor1.png",
+    picture: "/assets/dr.16.jpg",
     name: "Lee S.Willimson",
     specialization: "Cardiology",
     rating: "5.0",
@@ -46,7 +49,7 @@ export const DOCTORS = [
     location: "1300 N Vermont Ave 610, Los Angeles",
   },
   {
-    picture: "/assets/doctor2.png",
+    picture: "/assets/dr.8.jpg",
     name: "Dr. Daniyal Alex",
     specialization: "Neurology",
     rating: "4.9",
@@ -55,7 +58,7 @@ export const DOCTORS = [
     location: "1800 F Bounty Eve 810, Las Vegas",
   },
   {
-    picture: "/assets/doctor1.png",
+    picture: "/assets/dr.1.jpg",
     name: "Roger K. Jackson",
     specialization: "Orthopedics",
     rating: "5.0",
@@ -64,7 +67,7 @@ export const DOCTORS = [
     location: "1200 F Cristy Eve 910, New York",
   },
   {
-    picture: "/assets/doctor2.png",
+    picture: "/assets/dr.22.jpg",
     name: "Raymudo M.Drake",
     specialization: "Covid-19",
     rating: "4.9",
@@ -72,12 +75,12 @@ export const DOCTORS = [
     noOfPatients: "+8000",
     location: "1900 F Cristy Eve 810, New York",
   },
-]
+];
 
 export const PATIENT_TESTIMONIALS = [
   {
     name: "Jessica Tailor",
-    avatar: "/assets/person3.jpg",
+    avatar: "/assets/pt.104.jpg",
     tagline: "It was an amazing experience!",
     testimonial_1:
       "Highly glad to avail the cordial services of DoctrEx. One of my patients enjoyed these services recently and he expresses deep gratitude to me for referring him to DoctrEx.",
@@ -86,7 +89,7 @@ export const PATIENT_TESTIMONIALS = [
   },
   {
     name: "Micheal Aaron",
-    avatar: "/assets/person2.jpg",
+    avatar: "/assets/pt.118.jpg",
     tagline: "A truly incredible experience!",
     testimonial_1:
       "I'm thrilled to use DoctrEx's friendly services. Recently, one of my patients took use of these services, and he recently thanked me profusely for introducing him to DoctrEx.",
@@ -96,13 +99,13 @@ export const PATIENT_TESTIMONIALS = [
   {
     name: "Human Rarcal",
     tagline: "A remarkable experience, undoubtedly!",
-    avatar: "/assets/person1.jpg",
+    avatar: "/assets/pt.113.jpg",
     testimonial_1:
       "Really happy to use DoctrEx's friendly services. One of my patients recently expressed his heartfelt thanks to me for introducing him to DoctrEx after taking use of these services.",
     testimonial_2:
       "As part of his remarks, he added that he would heartily endorse Anavara for those seeking medical care abroad. Air Amblance service and medical tourism. Global Facilitators for Health & Wellness.",
   },
-]
+];
 
 export const CHRONICAL_DISEASES = [
   "Diabetes",
@@ -115,7 +118,7 @@ export const CHRONICAL_DISEASES = [
   "Depression",
   "Asthma",
   "Osteoporosis",
-]
+];
 
 export const SPECIALITIES = [
   "Psychiatry",
@@ -128,4 +131,4 @@ export const SPECIALITIES = [
   "Pediatrics",
   "Obstetrics & Gynecology",
   "Surgery",
-]
+];

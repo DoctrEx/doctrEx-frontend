@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "@mui/material";
 import Sidebar from "../components/Navbar";
 import "./book-appointment.css";
@@ -7,63 +7,43 @@ import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import ReplyIcon from "@mui/icons-material/Reply";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const BookAppointment = () => {
   // eslint-disable-next-line
   console.log("pain");
-  const [name, setName] = useState("Sofia Gill");
-  const data = [
-    {
-      img: "/assets/Sulangi.jpg",
-      name: "Dr.Samel",
-      speciality: "Cardiology",
-      price: 100,
-      status: "Complete",
-      goto: "/appointment/confirm",
-    },
-    {
-      img: "/assets/iqra.jpg",
-      name: "Dr.Iqraa",
-      speciality: "Cardiology",
-      price: 170,
-      status: "Pending",
-      goto: "/appointment/confirm",
-    },
-    {
-      img: "/assets/Nasia.jpg",
-      name: "Dr.Nasia",
-      speciality: "Cardiology",
-      price: 200,
-      status: "Complete",
-      goto: "/appointment/confirm",
-    },
-    {
-      img: "/assets/doctor.jpg",
-      name: "Dr.Angil",
-      speciality: "Cardiology",
-      price: 156,
-      status: "Complete",
-      goto: "/appointment/confirm",
-    },
-    {
-      img: "/assets/Ben.jpg",
-      name: "Dr.Benne",
-      speciality: "Cardiology",
-      price: 194,
-      status: "Pending",
-      goto: "/appointment/confirm",
-    },
-    {
-      img: "/assets/Samar.jpg",
-      name: "Dr.Samar",
-      speciality: "Cardiology",
-      price: 135,
-      status: "Complete",
-      goto: `/appointment/confirm?${name}`,
-    },
-  ];
+  const name = localStorage.getItem("name");
+  const profilePicture = localStorage.getItem("profilePicture");
 
-  const [sudo, setsudo] = useState(data);
+  const [data, setData] = useState([]);
+  const [sudo, setsudo] = useState([]);
+  async function getAppointments() {
+    try {
+      const { data } = await axios.get(
+        `http://127.0.0.1:8000/api/appointments/`
+        // `http://127.0.0.1:8000/api/appointments/patient?id=101`
+      );
+      setData(data);
+      setsudo(data);
+      // console.log("data:", data);
+      // setFriendDetail(data[0])
+      // getFollowerData(data[0])
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getAppointments();
+  }, []);
+
+  // const userData = (item, index) => {
+  //   console.log(item, index);
+  //   localStorage.setItem("dr-name", item.name);
+  //   localStorage.setItem("dr-speciality", item.speciality);
+  //   localStorage.setItem("dr-fees", item.fees);
+  //   localStorage.setItem("dr-profilePicture", item.profilePicture);
+  // };
   const [searchText, setSearchText] = useState("");
   const searchHandler = (e) => {
     console.log(e.target.value);
@@ -72,27 +52,29 @@ const BookAppointment = () => {
       data.filter(
         (data) =>
           data.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
-          data.speciality
+          data.speciality[0]
+            .toString()
             .toLowerCase()
             .includes(e.target.value.toLowerCase()) ||
-          data.price.toString().includes(e.target.value.toLowerCase())
+          data.fees.includes(e.target.value.toLowerCase())
       )
     );
   };
-  const report1 = sudo.map((item) => (
-    <div className="container-book-appointment-row">
+  console.log("sudo", sudo);
+  const report1 = sudo?.map((item) => (
+    <div className="container-book-appointment-row" key={item.id}>
       <div className="container-content-info">
         <img
           className="container-content-picture"
-          src={item.img}
+          src={`/assets/${item.profilePicture}`}
           alt="profile"
         />
 
-        {item.name}
+        {`Dr.${item.name.slice(0, 5)}`}
       </div>
-      <div>{item.speciality}</div>
-      <div>{item.price}$</div>
-      <Link to={item.goto}>
+      <div>{item.speciality[0].slice(0, 8)}</div>
+      <div>{item.fees}$</div>
+      <Link to={`/appointment/confirm/${item.id}`}>
         <button
           style={{
             color: "rgb(0, 97, 255)",
@@ -105,6 +87,7 @@ const BookAppointment = () => {
             transform: "scaleX(-1)",
             cursor: "pointer",
           }}
+          // onClick={console.log(index)}
         >
           <div>
             <ReplyIcon style={{ fontSize: "30" }} />
@@ -123,7 +106,7 @@ const BookAppointment = () => {
         <div className="container-profile">
           <img
             className="container-profile-picture"
-            src="/assets/sofia.jpg"
+            src={`/assets/${profilePicture}`}
             alt="profile"
           />
           <h2> {name} !</h2>

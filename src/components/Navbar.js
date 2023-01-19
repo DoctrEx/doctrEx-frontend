@@ -37,30 +37,26 @@ function Sidebar(props) {
     <ChatBubbleOutlineOutlinedIcon className="icon" />,
   ];
   const drawer = (
-    <div className="main">
+    // <div className="main">
+    <div className="main sidebar-container">
       <h1 className="logo">DoctrEx</h1>
       {/* <Divider /> */}
       <List className="Box">
-        {[
-          "Dashboard",
-          "Appointment",
-          "Chat",
-          "Payment",
-          "Account",
-          "Logout",
-        ].map((text, index) => (
-          <Link
-            to={"/" + text.toLowerCase()}
-            style={{ textDecoration: "none" }}
-          >
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>{icons[index]}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
+        {["Dashboard", "Appointment", "Payment", "Logout"].map(
+          (text, index) => (
+            <Link
+              to={"/" + text.toLowerCase()}
+              style={{ textDecoration: "none" }}
+            >
+              <ListItem key={text} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>{icons[index]}</ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+          )
+        )}
       </List>
     </div>
   );

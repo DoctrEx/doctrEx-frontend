@@ -13,6 +13,7 @@ import { URL_SIGNUP, URL_HOME } from "../router/routes";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { isEmail } from "../utils/helper";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   // reactive variables
@@ -21,6 +22,9 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isError, setIsError] = useState(false);
   const navigate = useNavigate();
+  const notify = (message) => toast.error(message);
+  const notifySuccess = (message) => toast.success(message);
+
   // login handler
   const loginHandler = (event) => {
     event.preventDefault();
@@ -28,9 +32,9 @@ const Login = () => {
       setIsError(true);
       return;
     }
-    alert(JSON.stringify({ email, password }));
+    // alert(JSON.stringify({ email, password }));
     const values = { email, password };
-    alert(JSON.stringify({ email, password }));
+    // alert(JSON.stringify({ email, password }));
     console.log(values);
     axios
       .post(`http://127.0.0.1:8000/api/auth/signin`, values)
@@ -40,22 +44,28 @@ const Login = () => {
         localStorage.setItem("email", res.data.email);
         localStorage.setItem("accessToken", res.data.accessToken);
         localStorage.setItem("roleId", res.data.roleId);
-        localStorage.setItem("name", res.data.name);
-        alert(res.data.message);
+        localStorage.setItem("profilePicture", res.data.profilePicture);
+        localStorage.setItem(
+          "name",
+          res.data.roleId == 1 ? res.data.name : `Dr.${res.data.name}`
+        );
+        notifySuccess("Login Successful");
         const id = localStorage.getItem("id");
         console.log(id);
         if (res.data.accessToken) {
+          notifySuccess("Login Succesful");
           navigate("/dashboard");
         }
       })
       .catch((error) => {
         console.error(error);
-        alert(error);
+        notify(error.response.data.message);
       });
   };
 
   return (
     <Grid container className="h-screen">
+      <Toaster />
       <Grid item xs={12} md={6}>
         <div className="flex justify-center flex-col items-center h-full">
           <div className="p-5 w-full absolute top-0 left-0">
@@ -138,7 +148,7 @@ const Login = () => {
       <Grid item xs={12} md={6} className="hidden md:block">
         <div className="h-full flex justify-center">
           <img
-            src="/assets/nurse.jpg"
+            src="/assets/dr.5.jpg"
             alt="doctor"
             className="w-full h-full object-cover"
           />

@@ -1,5 +1,6 @@
 .confirm-appointment-page {
   display: flex;
+  background-color: rgb(217, 217, 217, 0.17);
 }
 
 .sidebar {
@@ -11,20 +12,23 @@
   display: flex;
   flex: 5;
   flex-direction: column;
-  background-color: rgb(217, 217, 217, 0.17);
+  /* background-color: rgb(217, 217, 217, 0.17); */
   height: 100vh;
   width: 100vw;
+  margin-right: 50px;
 }
 .confirm-container-profile {
-  flex: 2;
+  /* flex: 2; */
   background-color: white;
   border-radius: 20px;
   margin-top: 2rem;
   padding-top: 1rem;
   width: 75vw;
+  height: 200px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-right: 80px;
 }
 .container-confirm-profile-picture {
   width: 150px;
@@ -41,11 +45,12 @@
 }
 .container-book {
   width: 75vw;
-  flex: 5;
+  /* flex: 5; */
   margin-top: 1rem;
   background-color: white;
   border-radius: 20px;
   display: flex;
+  height: 400px;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -142,4 +147,8 @@
   font-weight: bold;
   margin-top: 1rem;
   margin-right: 4rem;
+}
+
+.confirm-button:hover {
+  cursor: pointer;
 }

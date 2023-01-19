@@ -1,5 +1,8 @@
 .dashboard-page {
   display: flex;
+  background-color: rgb(217, 217, 217, 0.17);
+  overflow: hidden;
+  /* background-color: black; */
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -7,30 +10,32 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #fff; 
+  box-shadow: inset 0 0 5px #fff;
   border-radius: 10px;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background:  rgb(0 97 255 / 60%); 
+  background: rgb(0 97 255 / 60%);
 
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background:  rgba(255, 74, 139, 0.55); 
+  background: rgba(255, 74, 139, 0.55);
 }
 .sidebar {
   flex: 0.5;
+  /* background-color: rgb(217, 217, 217, 0.17); */
 }
 
 .container {
   flex: 5;
-  background-color: rgb(217, 217, 217, 0.17);
+  /* background-color: rgb(217, 217, 217, 0.17); */
   height: 100vh;
   width: 100vw;
+  margin-right: 50px;
 }
 
 .container-profile {
@@ -87,7 +92,6 @@
   border-radius: 20px;
   /* height: 10px !important; */
   overflow-y: scroll;
-  
 }
 .container-report-row {
   display: flex;
