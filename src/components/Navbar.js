@@ -28,6 +28,7 @@ function Sidebar(props) {
   // const handleDrawerToggle = () => {
   //   setMobileOpen(!mobileOpen);
   // };
+  const roleId = localStorage.getItem("roleId");
   console.log("pain");
   const icons = [
     <HomeIcon className="icon" />,
@@ -36,27 +37,41 @@ function Sidebar(props) {
     <PaymentOutlinedIcon className="icon" />,
     <ChatBubbleOutlineOutlinedIcon className="icon" />,
   ];
+  const dr = ["Dashboard", "Appointment", "Payment", "Logout"];
+  const pt = ["Dashboard", "Appointment", "Payment", "Map", "Logout"];
   const drawer = (
     // <div className="main">
     <div className="main sidebar-container">
       <h1 className="logo">DoctrEx</h1>
       {/* <Divider /> */}
       <List className="Box">
-        {["Dashboard", "Appointment", "Payment", "Logout"].map(
-          (text, index) => (
-            <Link
-              to={"/" + text.toLowerCase()}
-              style={{ textDecoration: "none" }}
-            >
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>{icons[index]}</ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            </Link>
-          )
-        )}
+        {roleId == 1
+          ? pt.map((text, index) => (
+              <Link
+                to={"/" + text.toLowerCase()}
+                style={{ textDecoration: "none" }}
+              >
+                <ListItem key={text} disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>{icons[index]}</ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItemButton>
+                </ListItem>
+              </Link>
+            ))
+          : dr.map((text, index) => (
+              <Link
+                to={"/" + text.toLowerCase()}
+                style={{ textDecoration: "none" }}
+              >
+                <ListItem key={text} disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>{icons[index]}</ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItemButton>
+                </ListItem>
+              </Link>
+            ))}
       </List>
     </div>
   );

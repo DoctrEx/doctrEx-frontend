@@ -9,6 +9,7 @@ import { Box } from "@mui/system";
 
 const Dashboard = () => {
   const profilePicture = `/assets/${localStorage.getItem("profilePicture")}`;
+  const roleId = localStorage.getItem("roleId");
   // const profilePicture = `/assets/${localStorage.getItem("profilePicture")}`;
   const pieOptions = {
     dataLabels: { enabled: false },
@@ -84,10 +85,17 @@ const Dashboard = () => {
   // eslint-disable-next-line
   const [name, setName] = useState(localStorage.getItem("name"));
   // eslint-disable-next-line
-  const [review, setReview] = useState({
+  const [reviewPatient, setReviewPatient] = useState({
     name: "Dr.Angilina",
     review:
       "Thank you, from the bottom of my heart, for everything you did to make sure my tooth decay was eradicated.",
+    img: "/assets/dr.8.jpg",
+  });
+  const [reviewDoctor, setReviewDoctor] = useState({
+    name: "Reddy Mill",
+    review:
+      "Amazing experience with the doctor,loved the professional cooperation",
+    img: "/assets/pt.106.jpg",
   });
   // eslint-disable-next-line
   const [img, setImg] = useState();
@@ -239,13 +247,17 @@ const Dashboard = () => {
                 <div className="container-content-2-review-1">
                   <img
                     className="container-content-2-review-picture"
-                    src="/assets/dr.25.jpg"
+                    src={roleId == 1 ? reviewPatient.img : reviewDoctor.img}
                     alt="profile"
                   />
                 </div>
                 <div className="container-content-2-review-2">
-                  <h5>{review.name}</h5>
-                  <h6>{review.review}</h6>
+                  <h5>
+                    {roleId == 1 ? reviewPatient.name : reviewDoctor.name}
+                  </h5>
+                  <h6>
+                    {roleId == 1 ? reviewPatient.review : reviewDoctor.review}
+                  </h6>
                 </div>
                 <div className="container-content-2-review-3"></div>
               </div>

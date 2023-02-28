@@ -37,6 +37,23 @@ const Payment = () => {
     getAppointments();
   }, []);
 
+  const sendMail = () => {
+    console.log("sendMail");
+    const values = {
+      roleId: localStorage.getItem("roleId"),
+      name: name,
+      option: "Mobile Pay",
+      fees: localStorage.getItem("fees"),
+    };
+    axios
+      .post(`http://127.0.0.1:8000/api/appointments/`, values)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   console.log("sudo", sudo);
   const [searchText, setSearchText] = useState("");
   const searchHandler = (e) => {

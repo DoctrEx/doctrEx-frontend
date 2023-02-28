@@ -44,7 +44,11 @@ export const OPEN_ROUTES = [
   },
   {
     path: URL_MAP,
-    element: <GoogleMaps />,
+    element: (
+      <Protected>
+        <GoogleMaps />
+      </Protected>
+    ),
   },
   {
     path: URL_LOGOUT,

@@ -26,6 +26,7 @@ import { getStyles } from "../utils/helper";
 import { isEmail } from "../utils/helper";
 import { FormHelperText } from "@mui/material";
 import { SPECIALITIES } from "../utils/constants";
+import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 
 const ITEM_HEIGHT = 48;
@@ -41,6 +42,8 @@ const MenuProps = {
 
 const Signup = () => {
   // theme and other reactive vars
+  const notify = (message) => toast.error(message);
+  const notifySuccess = (message) => toast.success(message);
   const theme = useTheme();
   const [showPassword, setShowPassword] = useState(false);
   const [isPatient, setIsPatient] = useState(true);
@@ -140,17 +143,24 @@ const Signup = () => {
     axios
       .post(`http://127.0.0.1:8000/api/auth/signup`, values)
       .then((res) => {
-        console.log(res.data);
-        alert(res.data.message);
+        console.log(res.data.message);
+        if (res.data.message == "USER REGISTERED") {
+          notifySuccess(res.data.message);
+        } else {
+          notify(res.data.message);
+        }
+        // alert(res.data);
       })
       .catch((error) => {
         console.error(error);
-        alert(error);
+        notify(error);
+        // alert(error);
       });
   };
 
   return (
     <Grid container className="h-screen flex justify-center">
+      <Toaster />
       <Grid item xs={12} md={6}>
         <div className="flex justify-center flex-col items-center h-full">
           <div className="p-5 absolute top-0 right-0">
